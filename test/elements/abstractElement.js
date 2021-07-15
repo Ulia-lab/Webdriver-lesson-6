@@ -1,10 +1,19 @@
 module.exports = class AbstractElement {
     constructor(selector, parent = null) {
-        this.element = $(selector);
         this.locator = selector;
         this.parent = parent;
+    
     }
-
+    
+    get element(){
+        if (this.parent){
+            return this.parent.$(this.locator)
+        }
+        /**
+         * @this {WebdriverIO.Element}
+         */
+        return browser.$(this.locator);
+    }
     isDisplayed () {
         return this.element.isDisplayed()
     }
@@ -43,6 +52,19 @@ module.exports = class AbstractElement {
 
     scroll () {
         return this.element.scrollIntoView();
+    }
+
+    /**
+     * 
+     * @param {string} selector 
+     * @returns {WebdriverIO.Element}
+     */
+    $(selector){
+        return this.element.$(selector)
+    }
+
+    $$(selector){
+        return this.element.$$(selector)
     }
     //создается новый объект с ceлектором, нужно найти его на странице  
 }

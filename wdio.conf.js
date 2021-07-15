@@ -32,7 +32,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -77,6 +77,7 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+    baseUrl: 'https://www.asos.com/ru/',
     //
     // ===================
     // Test Configurations

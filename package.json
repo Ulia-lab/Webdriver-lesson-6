@@ -25,7 +25,7 @@
     "wdio-chromedriver-service": "^7.1.1"
   },
   "scripts": {
-    "test": "chromedriver test\\test.js"
+    "test": "wdio"
   },
   "keywords": [
     "webdriver",

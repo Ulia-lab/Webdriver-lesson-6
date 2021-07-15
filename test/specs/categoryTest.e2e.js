@@ -10,11 +10,13 @@ describe('Category page', () => {
         // categoryPage.loginButton().click();
         //browser.pause(5000);
     });
-    it ('Checking search functionality', () => {
+    it ('Checking search and pause functionality', () => {
         const searchInput = new AbstractElement(`#chrome-search`);
         const searchButton = new AbstractElement('button[type="submit"]');
         searchInput.setValue('рубашка');
+        browser.pause(1000)
         searchButton.click();
+
     });
     it ('Checking menu functionality', () => {
         const menuBar = new AbstractElement(`button[aria-controls="1020946c-8949-4e9c-9719-43435002bcd4"]`);
