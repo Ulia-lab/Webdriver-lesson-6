@@ -207,17 +207,10 @@ exports.config = {
     * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
      */
-     beforeSuite: function (suite) {
-        allure.addFeature(suite.name);
-    },
+
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-     beforeTest: function (test, context) {
-        allure.addEnvironment("BROWSER", browser.capabilities.browserName);
-        allure.addEnvironment("BROWSER_VERSION", browser.capabilities.version);
-        allure.addEnvironment("PLATFORM", browser.capabilities.platform);
-    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
@@ -233,18 +226,6 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-     afterTest: function(test, context, { error, result, duration, passed, retries }) {
-        if (error !== undefined) {
-            try {
-                //TODO: Fix allure reporting on failure
-                utilities.takeScreenshot(test.title, true)
-            } catch {
-                console.log('>> Capture Screenshot Failed!');
-            }
-        }
-    },
-
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {Object} suite suite details
@@ -285,10 +266,6 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-     onComplete: function(exitCode, config, capabilities, results) {
-        const mergeResults = require('wdio-json-reporter/mergeResults');
-        mergeResults('./report/json', 'wdio-*', 'testResults.json')
-    },
     /**
     * Gets executed when a refresh happens.
     * @param {String} oldSessionId session ID of the old session
