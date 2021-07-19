@@ -66,5 +66,4 @@ module.exports = class AbstractElement {
     $$(selector){
         return this.element.$$(selector)
     }
-    //создается новый объект с ceлектором, нужно найти его на странице  
 }

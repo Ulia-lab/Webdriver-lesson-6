@@ -3,8 +3,6 @@ const AbstractElement = require("./abstractElement");
 class Header extends AbstractElement {
     constructor(){
         super('#chrome-header')
-
-        console.log('instance of header')
     }
 
     searchInput = new AbstractElement(`#chrome-search`, this);
@@ -12,6 +10,8 @@ class Header extends AbstractElement {
     womenButton = new AbstractElement('a#women-floor', this)
     menButton = new AbstractElement('a#women-floor', this)
     myAccount = new AbstractElement('button[data-testid="myAccountIcon"]', this)
+    signIn = new AbstractElement('a[data-testid="signin-link"]', this)
+    welcomeText = new AbstractElement('span[class="tiqiyps"]', this)
 
     search(text) {
         this.searchInput.setValue(text);
