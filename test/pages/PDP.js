@@ -25,7 +25,8 @@ class ProductPage extends BasePage {
     
     likeButton = new AbstractElement(`button[class="save-button"]`, null); 
     addToBasket = new AbstractElement(`button[data-test-id="add-button"]`, null);
-    
+    selectSizeError = new AbstractElement(`#selectSizeError`, null);
+
     showMore = new AbstractElement(`a[class="show"]`, null);
     productInfo = new AbstractElement(`div[class="product-description"]`, null);
 

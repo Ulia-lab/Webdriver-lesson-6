@@ -14,7 +14,14 @@ describe('Product page', () => {
         productPage.productColor.isDisplayed()
     });
 
-    it('Add product to basket', () => {
+    it('Unhappy path - Add product to basket', () => {
+        const productPage = new ProductPage();
+        productPage.open()
+        productPage.addToBasket.click()
+        productPage.selectSizeError.isDisplayed()
+    });
+
+    it('Happy path - Add product to basket', () => {
         const productPage = new ProductPage();
         productPage.open()
         productPage.productSize.selectOption('EU 41')
