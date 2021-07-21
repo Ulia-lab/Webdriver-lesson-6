@@ -1,5 +1,6 @@
 const BasePage = require("./BasePage");
 const Header = require('../elements/Header')
+const Footer = require('../elements/Footer');
 const AbstractElement = require("../elements/abstractElement");
 
 
@@ -10,6 +11,8 @@ class ProductPage extends BasePage {
     }
 
     header = new Header();
+    footer = new Footer();
+
 
     productImage = new AbstractElement(`div[class="product-gallery"]`, null);
     imageArrow = new AbstractElement(`button[class="arrow-button arrow-button-right"]`, null);

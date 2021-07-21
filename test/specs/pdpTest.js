@@ -27,5 +27,6 @@ describe('Product page', () => {
         productPage.open()
         productPage.showMore.scroll()
         productPage.productInfo.isDisplayed()
+        productPage.footer.scroll()
     });
 });
