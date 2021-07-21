@@ -8,10 +8,12 @@ describe('Category page', () => {
         homePage.header.search('t-shirt')
     });
 
-    it('Women page should open', () => {
-        const homePage = new HomePage();
-        homePage.open()
-        homePage.header.womenButton.click()
+    it('Menu should works', () => {
+        const categoryPage = new CategoryPage();
+        categoryPage.open();
+        categoryPage.header.womenButton.click();
+        categoryPage.header.menuButton.click();
+        categoryPage.header.menuLink.click();
     });
 
     it('Customer should be able to login', () => {

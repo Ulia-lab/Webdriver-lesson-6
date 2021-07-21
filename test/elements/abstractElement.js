@@ -54,6 +54,10 @@ module.exports = class AbstractElement {
         return this.element.scrollIntoView();
     }
 
+    selectOption (text) {
+        return this.element.selectByVisibleText(text)
+    }
+
     /**
      * 
      * @param {string} selector 
