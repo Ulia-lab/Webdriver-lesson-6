@@ -14,6 +14,11 @@ module.exports = class AbstractElement {
          */
         return browser.$(this.locator);
     }
+
+    waitUntil () {
+        return this.element.waitUntil(function () {(this.element.isDisplayed()) === 'true'}, { timeout: 10000 })
+    }
+
     isDisplayed () {
         return this.element.isDisplayed()
     }
