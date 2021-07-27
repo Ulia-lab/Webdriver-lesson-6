@@ -1,8 +1,12 @@
 module.exports = class AbstractElement {
-    constructor(selector, parent = null) {
+    /**
+     * 
+     * @param {string} selector 
+     * @param {AbstractElement} parent 
+     */
+    constructor(selector, parent = null) { 
         this.locator = selector;
         this.parent = parent;
-    
     }
     
     get element(){
@@ -59,7 +63,8 @@ module.exports = class AbstractElement {
         return this.element.scrollIntoView();
     }
 
-    selectOption (text) {
+    selectByVisibleText (text) {
+        // добавить класс дроп даун
         return this.element.selectByVisibleText(text)
     }
 

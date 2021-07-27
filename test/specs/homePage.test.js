@@ -21,7 +21,7 @@ describe('HomePage', () => {
         homePage.open()
         homePage.header.myAccount.hover()
         //homePage.header.signIn.waitUntil()
-        browser.pause(1000)
+        //browser.pause(1000)
         homePage.header.signIn.click()
         homePage.login.login('iuliia.chupina@epam.com', '87654321epam');
         browser.pause(6000)

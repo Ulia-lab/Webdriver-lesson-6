@@ -5,6 +5,7 @@ describe('Basket page', () => {
 
     it('Basket page content should be visible', () => {
         const productPage = new ProductPage();
+        productPage.open()
         productPage.addProduct()
         const basketPage = new BasketPage();
         basketPage.open()
